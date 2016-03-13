@@ -1,0 +1,32 @@
+{
+    "name":"Quora Night Mode",
+    "version":"0.0.1",
+    "manifest_version":2,
+    "icons": {
+        "48": "icons/48/Quora-Icon.png",
+        "56": "icons/56/Quora-Icon.png",
+        "72": "icons/72/Quora-Icon.png",
+        "96": "icons/96/Quora-Icon.png",
+        "128": "icons/128/Quora-Icon.png",
+        "256": "icons/256/Quora-Icon.png",
+        "512": "icons/512/Quora-Icon.png" },
+    "browser_action":{
+        "default_title":"Quora Night Mode",
+        "default_popup":"popup.html",
+        "default_icon": {
+            "48": "icons/48/Quora-Icon.png",
+            "56": "icons/56/Quora-Icon.png"
+        },
+    },
+    "background":{
+        "scripts":["background.js"],
+        "persistent":false
+    },
+    "content_scripts":[
+        {
+            "matches":["*://www.quora.com/*"],
+            "js":["content.js"]
+        }
+    ],
+    "devtools_page": "devtools.html"
+}
